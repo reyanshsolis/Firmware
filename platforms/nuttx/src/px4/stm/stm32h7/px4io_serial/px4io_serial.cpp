@@ -1,6 +1,6 @@
 /****************************************************************************
  *
- *   Copyright (C) 2012, 2019 PX4 Development Team. All rights reserved.
+ *   Copyright (c) 2013-2015 PX4 Development Team. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -32,65 +32,12 @@
  ****************************************************************************/
 
 /**
- * @file drv_adc.h
+ * @file px4io_serial.cpp
  *
- * ADC driver interface.
- *
+ * Serial interface for PX4IO on STM32H7
  */
 
-#pragma once
+#include <px4_arch/px4io_serial.h>
 
-#include <stdint.h>
-#include <sys/ioctl.h>
-
-/* Define the PX4 low level format ADC and the maximum
- * number of channels that can be returned by a lowlevel
- * ADC driver. Drivers may return less than PX4_MAX_ADC_CHANNELS
- * but no more than PX4_MAX_ADC_CHANNELS.
- *
- */
-#define PX4_MAX_ADC_CHANNELS 12
-typedef struct __attribute__((packed)) px4_adc_msg_t {
-	uint8_t      am_channel;               /* The 8-bit ADC Channel */
-	int32_t      am_data;                  /* ADC convert result (4 bytes) */
-} px4_adc_msg_t;
-
-
-#define ADC0_DEVICE_PATH	"/dev/adc0"
-
-
-__BEGIN_DECLS
-
-/**
- * Initialize ADC hardware
- * @param base_address architecture-specific address to specify the ADC
- * @return 0 on success, <0 error otherwise
- */
-int px4_arch_adc_init(uint32_t base_address);
-
-/**
- * Uninitialize ADC hardware
- * @param base_address architecture-specific address to specify the ADC
- */
-void px4_arch_adc_uninit(uint32_t base_address);
-
-/**
- * Read a sample from the ADC
- * @param base_address architecture-specific address to specify the ADC
- * @param channel specify the channel
- * @return sample, 0xffffffff on error
- */
-uint32_t px4_arch_adc_sample(uint32_t base_address, unsigned channel);
-
-/**
- * Get the temperature sensor channel bitmask
- */
-uint32_t px4_arch_adc_temp_sensor_mask(void);
-
-/**
- * Get the adc digital number full count
- */
-uint32_t px4_arch_adc_dn_fullcount(void);
-
-__END_DECLS
+// TODO
 
