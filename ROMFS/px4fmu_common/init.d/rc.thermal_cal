@@ -32,9 +32,11 @@ fi
 #
 # Start the thermal calibration cycle.
 #
+temperature_calibration start
+
 if [ "x$TEMP_CALIB_ARGS" != "x" ]
 then
-	send_event temperature_calibration ${TEMP_CALIB_ARGS}
+	temperature_calibration calibrate ${TEMP_CALIB_ARGS}
 fi
 
 unset TEMP_CALIB_ARGS
