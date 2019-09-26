@@ -37,5 +37,5 @@ add_subdirectory(../stm32_common/hrt hrt)
 add_subdirectory(../stm32_common/io_pins io_pins)
 add_subdirectory(../stm32_common/tone_alarm tone_alarm)
 
-#add_subdirectory(px4io_serial)
+add_subdirectory(px4io_serial)
 
