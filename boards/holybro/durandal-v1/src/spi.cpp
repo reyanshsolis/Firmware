@@ -280,11 +280,11 @@ __EXPORT void board_spi_reset(int ms)
 
 #if BOARD_USE_DRDY
 	stm32_configgpio(GPIO_DRDY_OFF_SPI1_DRDY1_ICM20689);
-	stm32_configgpio(GPIO_DRDY_OFF_SPI1_DRDY2_BMI055_GYRO);
-	stm32_configgpio(GPIO_DRDY_OFF_SPI1_DRDY3_BMI055_ACC);
+	stm32_configgpio(GPIO_DRDY_OFF_SPI1_DRDY2_BMI088_GYRO);
+	stm32_configgpio(GPIO_DRDY_OFF_SPI1_DRDY3_BMI088_ACC);
 	stm32_configgpio(GPIO_DRDY_OFF_SPI1_DRDY4_ICM20602);
-	stm32_configgpio(GPIO_DRDY_OFF_SPI1_DRDY5_BMI055_GYRO);
-	stm32_configgpio(GPIO_DRDY_OFF_SPI1_DRDY6_BMI055_ACC);
+	stm32_configgpio(GPIO_DRDY_OFF_SPI1_DRDY5_BMI088_GYRO);
+	stm32_configgpio(GPIO_DRDY_OFF_SPI1_DRDY6_BMI088_ACC);
 #endif
 	/* set the sensor rail off */
 	stm32_gpiowrite(GPIO_VDD_3V3_SENSORS_EN, 0);
