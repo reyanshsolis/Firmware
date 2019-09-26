@@ -7,7 +7,7 @@ px4_add_board(
 	TOOLCHAIN arm-none-eabi
 	ARCHITECTURE cortex-m7
 	ROMFSROOT px4fmu_common
-#	IO px4_io-v2_default - Will not build yet in NuttX
+	IO px4_io-v2_default
 	TESTING
 #	UAVCAN_INTERFACES 2  - No H7 or FD can support in UAVCAN
 
@@ -48,7 +48,7 @@ px4_add_board(
 #					   all arch dependant code there
 		pwm_out_sim
 		px4fmu
-#		px4io - will not build in NuttX yet
+		px4io
 		roboclaw
 		tap_esc
 		telemetry # all available telemetry drivers
